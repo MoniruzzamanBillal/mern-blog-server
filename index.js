@@ -3,9 +3,10 @@ const cors = require("cors");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+const connectDb = require("./Db");
 
 const app = express();
-const BlogRouter = require("./Routes/BlogRoute");
+const BlogRouter = require("./Routes/Blog/BlogRoute");
 
 const port = process.env.port || 5000;
 
@@ -24,6 +25,8 @@ app.get("/", async (req, res) => {
   res.send({ message: " Blog server is running " });
 });
 
-app.listen(port, () => {
-  console.log(`listening from port ${port} `);
+connectDb().then(() => {
+  app.listen(port, () => {
+    console.log(`listening from port ${port} `);
+  });
 });
