@@ -5,9 +5,16 @@ const BlogSchema = mongoose.Schema({
     type: "String",
     require: true,
   },
+  titleImg: {
+    type: "String",
+  },
   description: {
     type: "String",
     require: true,
+  },
+
+  favCount: {
+    type: "Number",
   },
 });
 
