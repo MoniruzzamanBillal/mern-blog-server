@@ -1,6 +1,12 @@
+const mongoose = require("mongoose");
+const BlogSchema = require("../../Schema/Blog/BlogSchema");
+const BlogModel = new mongoose.model("Blog", BlogSchema);
+
 const getBlog = async (req, res) => {
   try {
-    res.send({ message: "get all blogs " });
+    const result = await BlogModel.find();
+
+    res.send({ result });
   } catch (error) {
     console.log(error);
   }
