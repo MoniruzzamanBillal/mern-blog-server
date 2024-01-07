@@ -16,6 +16,12 @@ const BlogSchema = mongoose.Schema({
   favCount: {
     type: "Number",
   },
+  writer: {
+    type: "String",
+  },
+  date: {
+    type: "String",
+  },
 });
 
 module.exports = BlogSchema;
