@@ -4,12 +4,16 @@ const router = express.Router();
 const getBlogs = require("../../Controller/Blog/GetBlogs");
 const postBlog = require("../../Controller/Blog/PostBlog");
 const getBlog = require("../../Controller/Blog/GetBlog");
+const getPopular = require("../../Controller/Blog/GetPopular");
 
 // get all blog posts
 router.get("/blogs", getBlogs);
 
 // get single blog  data
 router.get("/blog/:id", getBlog);
+
+// get popular posts
+router.get("/blogs/popular", getPopular);
 
 // post blogs in database
 router.post("/blog/post", postBlog);
