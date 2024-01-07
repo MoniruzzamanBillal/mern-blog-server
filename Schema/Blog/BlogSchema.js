@@ -19,7 +19,13 @@ const BlogSchema = mongoose.Schema({
   writer: {
     type: "String",
   },
+  writerImg: {
+    type: "String",
+  },
   date: {
+    type: "String",
+  },
+  category: {
     type: "String",
   },
 });
