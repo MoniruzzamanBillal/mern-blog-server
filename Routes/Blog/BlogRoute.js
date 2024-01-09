@@ -5,6 +5,7 @@ const getBlogs = require("../../Controller/Blog/GetBlogs");
 const postBlog = require("../../Controller/Blog/PostBlog");
 const getBlog = require("../../Controller/Blog/GetBlog");
 const getPopular = require("../../Controller/Blog/GetPopular");
+const addFavorite = require("../../Controller/Blog/AddFavorite");
 
 // get all blog posts
 router.get("/blogs", getBlogs);
@@ -17,5 +18,8 @@ router.get("/blogs/popular", getPopular);
 
 // post blogs in database
 router.post("/blog/post", postBlog);
+
+// add fav count api
+router.patch("/blog/favorite/:id", addFavorite);
 
 module.exports = router;
