@@ -7,6 +7,7 @@ const connectDb = require("./Db");
 
 const app = express();
 const BlogRouter = require("./Routes/Blog/BlogRoute");
+const UsersRoute = require("./Routes/User/User");
 
 const port = process.env.port || 5000;
 
@@ -20,6 +21,7 @@ app.use(
 );
 
 app.use("/api/", BlogRouter);
+app.use("/api/", UsersRoute);
 
 app.get("/", async (req, res) => {
   res.send({ message: " Blog server is running " });
