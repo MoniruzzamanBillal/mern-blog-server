@@ -28,6 +28,11 @@ const BlogSchema = mongoose.Schema({
   category: {
     type: "String",
   },
+  liked: [
+    {
+      type: "String",
+    },
+  ],
 });
 
 module.exports = BlogSchema;
