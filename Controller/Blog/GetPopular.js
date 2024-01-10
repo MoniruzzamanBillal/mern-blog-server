@@ -12,7 +12,7 @@ const GetPopular = async (req, res) => {
       titleImg: 0,
     });
 
-    console.log("result = ", result);
+    // console.log("result from popular blog  = ", result);
     res.send(result);
   } catch (error) {
     resizeBy.send({ message: error });
