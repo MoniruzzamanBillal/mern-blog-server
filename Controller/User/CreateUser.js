@@ -5,14 +5,18 @@ const userModel = new mongoose.model("User", userSchema);
 const createUser = async (req, res) => {
   try {
     const reqData = req.body;
-    // const reqData = { email: "abc@debugger.com" };
+
+    const result = await userModel.find(reqData);
+
+    console.log(result.length);
+
+    if (result.length > 0) {
+      return res.send({ message: "user already exist " });
+    }
 
     await new userModel(reqData).save();
 
     res.send({ message: "user created successfully s" });
-
-    console.log("data in create user route   = ", reqData);
-    res.send({ reqData });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: " there is a problem in server " });
