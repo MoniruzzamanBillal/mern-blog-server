@@ -6,12 +6,16 @@ const postBlog = require("../../Controller/Blog/PostBlog");
 const getBlog = require("../../Controller/Blog/GetBlog");
 const getPopular = require("../../Controller/Blog/GetPopular");
 const addFavorite = require("../../Controller/Blog/AddFavorite");
+const checkFavorite = require("../../Controller/Blog/CheckFavorite");
 
 // get all blog posts
 router.get("/blogs", getBlogs);
 
 // get single blog  data
 router.get("/blog/:id", getBlog);
+
+// check favorite / user liked
+router.get("/blog/favorite/check/:id", checkFavorite);
 
 // get popular posts
 router.get("/blogs/popular", getPopular);

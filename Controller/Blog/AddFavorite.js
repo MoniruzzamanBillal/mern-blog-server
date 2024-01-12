@@ -13,10 +13,7 @@ const addFavorite = async (req, res) => {
 
     const emailIndex = blog.liked.indexOf(userEmail);
 
-    console.log("email index = ", emailIndex);
-
     if (emailIndex !== -1) {
-      // function for decrease like count
       const updatedData = await BlogModel.findOneAndUpdate(
         { _id: req.params.id },
         {
@@ -48,7 +45,7 @@ const addFavorite = async (req, res) => {
 
     // console.log("result = ", result);
 
-    res.send({ message: "data updated " });
+    res.send({ message: "data updated ", liked: 1 });
   } catch (error) {
     res.send({ error });
   }
