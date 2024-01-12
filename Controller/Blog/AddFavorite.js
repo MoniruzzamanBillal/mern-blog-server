@@ -20,8 +20,8 @@ const addFavorite = async (req, res) => {
       const updatedData = await BlogModel.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $dec: {
-            favCount: 1,
+          $inc: {
+            favCount: -1,
           },
         }
       );
