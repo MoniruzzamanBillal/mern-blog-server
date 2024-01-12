@@ -4,8 +4,6 @@ const BlogModel = new mongoose.model("Blog", BlogSchema);
 
 const addFavorite = async (req, res) => {
   try {
-    console.log("hit favorite ");
-
     const { userEmail } = req.body;
     const id = req.params.id;
 
@@ -14,6 +12,7 @@ const addFavorite = async (req, res) => {
     const emailIndex = blog.liked.indexOf(userEmail);
 
     if (emailIndex !== -1) {
+      // ! function for decrease like count
       const updatedData = await BlogModel.findOneAndUpdate(
         { _id: req.params.id },
         {
@@ -30,7 +29,7 @@ const addFavorite = async (req, res) => {
       return res.send({ liked: 0 });
     }
 
-    // function for increase like count
+    // ! function for increase like count
     const updatedData = await BlogModel.findOneAndUpdate(
       { _id: req.params.id },
       {
@@ -42,9 +41,6 @@ const addFavorite = async (req, res) => {
 
     updatedData.liked.push(userEmail);
     const result = await updatedData.save();
-
-    // console.log("result = ", result);
-
     res.send({ message: "data updated ", liked: 1 });
   } catch (error) {
     res.send({ error });
