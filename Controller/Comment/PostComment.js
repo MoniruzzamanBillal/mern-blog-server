@@ -4,8 +4,6 @@ const CommentModel = new mongoose.model("Comment", CommentSchema);
 
 const postComment = async (req, res) => {
   try {
-    console.log("post comment route ");
-
     const commentData = req.body;
 
     console.log("data in post comment = ", commentData);
