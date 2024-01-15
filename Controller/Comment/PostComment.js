@@ -6,7 +6,7 @@ const postComment = async (req, res) => {
   try {
     const commentData = req.body;
 
-    console.log("data in post comment = ", commentData);
+    // console.log("data in post comment = ", commentData);
 
     const data = new CommentModel(commentData);
 
