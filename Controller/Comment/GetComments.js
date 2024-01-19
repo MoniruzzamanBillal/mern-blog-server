@@ -8,8 +8,14 @@ const getComments = async (req, res) => {
 
     const { limit, skip } = req.query;
 
-    // console.log(limit);
-    // console.log(skip);
+    const skipPage = parseFloat(skip);
+    const perPageItem = parseInt(limit);
+
+    const skipeNum = skipPage * perPageItem;
+
+    console.log("in get comment route = ");
+    console.log("skip page = ", skipPage);
+    console.log("paer page item   = ", perPageItem);
 
     const query = {
       blogId: blogId,
@@ -21,8 +27,8 @@ const getComments = async (req, res) => {
         blogId: 0,
         __v: 0,
       })
-      .limit(limit)
-      .skip(skip);
+      .limit(perPageItem)
+      .skip(skipeNum);
 
     res.send({ blogs });
   } catch (error) {
