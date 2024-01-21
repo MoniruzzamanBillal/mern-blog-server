@@ -8,6 +8,11 @@ const getPopular = require("../../Controller/Blog/GetPopular");
 const addFavorite = require("../../Controller/Blog/AddFavorite");
 const checkFavorite = require("../../Controller/Blog/CheckFavorite");
 
+// test route
+router.get("/test", async (req, res) => {
+  res.send({ message: "test route " });
+});
+
 // get all blog posts
 router.get("/blogs", getBlogs);
 

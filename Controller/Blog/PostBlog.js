@@ -8,7 +8,7 @@ const postBlog = async (req, res) => {
 
     const data = new BlogModel(requestData);
 
-    const response = await data.save();
+    await data.save();
 
     res.send({ message: "data added successfully" });
   } catch (error) {
