@@ -14,7 +14,7 @@ const getBlog = async (req, res) => {
 
     const result = await BlogModel.find().limit(perPageItem).skip(skipItem);
 
-    console.log(result);
+    // console.log(result);
 
     res.send({ result });
   } catch (error) {
