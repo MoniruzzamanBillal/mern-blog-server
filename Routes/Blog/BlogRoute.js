@@ -8,6 +8,7 @@ const getPopular = require("../../Controller/Blog/GetPopular");
 const addFavorite = require("../../Controller/Blog/AddFavorite");
 const checkFavorite = require("../../Controller/Blog/CheckFavorite");
 const getUserBlog = require("../../Controller/Blog/GetUserBlogs");
+const updateBlog = require("../../Controller/Blog/UpdateBlog");
 
 // test route
 router.get("/test", async (req, res) => {
@@ -34,5 +35,8 @@ router.post("/blog/post", postBlog);
 
 // add fav count api
 router.patch("/blog/favorite/:id", addFavorite);
+
+// update blog data
+router.patch("/blog/update/:id", updateBlog);
 
 module.exports = router;
