@@ -29,6 +29,10 @@ app.get("/", async (req, res) => {
   res.send({ message: " Blog server is running " });
 });
 
+app.get("/test", async (req, res) => {
+  res.send({ message: " Testing server route " });
+});
+
 connectDb().then(() => {
   app.listen(port, () => {
     console.log(`listening from port ${port} `);

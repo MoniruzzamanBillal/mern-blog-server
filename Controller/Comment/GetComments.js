@@ -13,9 +13,9 @@ const getComments = async (req, res) => {
 
     const skipeNum = skipPage * perPageItem;
 
-    console.log("in get comment route = ");
-    console.log("skip page = ", skipPage);
-    console.log("paer page item   = ", perPageItem);
+    // console.log("in get comment route = ");
+    // console.log("skip page = ", skipPage);
+    // console.log("paer page item   = ", perPageItem);
 
     const query = {
       blogId: blogId,
